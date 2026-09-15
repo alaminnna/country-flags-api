@@ -1,0 +1,11 @@
+services:
+  flagsapi:
+    build:
+      context: ..
+      dockerfile: deploy/Dockerfile
+    ports:
+      - "8080:8080"
+    # Uncomment to keep assets outside the image and mount them instead:
+    # volumes:
+    #   - ../assets:/app/assets:ro
+    restart: unless-stopped

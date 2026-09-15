@@ -1,0 +1,12 @@
+bin/
+web/node_modules/
+web/.next/
+
+
+data/
+.tmp/
+tmp/
+err.txt
+.api.pid
+diac_test.go
+device-shot (2).png

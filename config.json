@@ -1,0 +1,13 @@
+{
+  "_note": "Flags API runtime config (loaded from -config flag, default ./config.json; RESTART the server after editing). cors.enabled=false turns CORS OFF entirely (no headers, preflights fall through). allowed_origins [\"*\"] = open to every origin (default); use exact origins e.g. [\"https://example.com\"] to lock down. rate_limit.requests_per_minute=0 (or enabled=false) disables rate limiting. Explicit CLI flags (-cors, -ratelimit, -burst) and FLAGS_* env vars override this file. Unknown fields are ignored.",
+  "cors": {
+    "enabled": false,
+    "allowed_origins": ["*"],
+    "max_age_seconds": 86400
+  },
+  "rate_limit": {
+    "enabled": false,
+    "requests_per_minute": 200,
+    "burst": 100
+  }
+}

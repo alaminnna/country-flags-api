@@ -1,0 +1,23 @@
+[Unit]
+Description=Country Flags & Metadata API (single Go binary)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=flagstack
+Group=flagstack
+WorkingDirectory=/opt/flagsapi
+# Autocert needs :80/:443 -> grant bind without root.
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+Restart=always
+RestartSec=2
+LimitNOFILE=65536
+# Set -domain to enable in-process Let's Encrypt TLS on :443.
+ExecStart=/opt/flagsapi/bin/flagsapi -assets /opt/flagsapi/assets -addr :8080
+Environment=FLAGS_RATELIMIT=3.333333
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

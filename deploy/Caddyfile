@@ -1,0 +1,10 @@
+# OPTIONAL alternative to in-process autocert: terminate TLS in Caddy (free,
+# automatic HTTPS + HTTP/3) and reverse-proxy to Go on 127.0.0.1:8080.
+# Only use one TLS strategy: either this file OR -domain autocert, not both.
+
+flags.example.com {
+	reverse_proxy 127.0.0.1:8080
+
+	# Cache immutable assets at the edge of this box
+	header /assets/v1/* Cache-Control "public, max-age=31536000, immutable"
+}
