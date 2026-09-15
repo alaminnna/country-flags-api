@@ -1,7 +1,6 @@
 {
-  "rootDirectory": "web",
-  "buildCommand": "npm install && npm run build",
-  "outputDirectory": "out",
+  "buildCommand": "cd web && npm install && npm run build",
+  "outputDirectory": "web/out",
   "framework": "nextjs",
   "env": {
     "NEXT_PUBLIC_API_URL": "@api-url"
