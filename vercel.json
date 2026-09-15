@@ -1,6 +1,5 @@
 {
   "installCommand": "npm install",
   "buildCommand": "npm run build",
-  "outputDirectory": "out",
-  "ignoreCommand": "git ls-files --others --exclude-standard -- web/ | head -1"
+  "outputDirectory": "out"
 }
