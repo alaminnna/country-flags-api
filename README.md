@@ -1,7 +1,7 @@
 # country-flags-api
 
 <p align="center">
-  <img src="docs/device-shot.png" alt="Flags API — Country flags served at RAM speed, responsive on laptop and mobile" width="100%" />
+  <img src="docs/hero.png" alt="Flags API — Country flags served at RAM speed, responsive on laptop and mobile" width="100%" />
 </p>
 
 <h1 align="center">Flags API</h1>
