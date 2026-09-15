@@ -1,5 +1,23 @@
 {
-  "buildCommand": "cd web && npm install && npm run build",
-  "outputDirectory": "web/out",
-  "framework": "nextjs"
+  "rootDirectory": "web",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "out",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_API_URL": "@api-url"
+  },
+  "headers": [
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
 }

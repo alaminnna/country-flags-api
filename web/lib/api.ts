@@ -44,15 +44,16 @@ export function flagUrl(code: string, opts?: { size?: string; format?: string; t
   const type = opts?.type ?? 'image';
   const format = opts?.format ?? 'png';
   const size = opts?.size ?? (type === 'icon' ? '80x60' : 'w320');
-  if (type === 'vector') return `/assets/v1/vectors/${format}/${code}.${format}`;
-  if (type === 'icon') return `/assets/v1/icons/${size}/${code}.${format}`;
+  const base = apiBase();
+  if (type === 'vector') return `${base}/assets/v1/vectors/${format}/${code}.${format}`;
+  if (type === 'icon') return `${base}/assets/v1/icons/${size}/${code}.${format}`;
   // image: w-sizes use w<N> dirs, h-sizes use h<N> dirs
   if (/^\d+$/.test(size)) {
     // default width dir
-    return `/assets/v1/images/w${size}/${code}.${format}`;
+    return `${base}/assets/v1/images/w${size}/${code}.${format}`;
   }
-  if (/^\d+x\d+$/.test(size)) return `/assets/v1/images/w${size.split('x')[0]}/${code}.${format}`;
-  return `/assets/v1/images/${size}/${code}.${format}`;
+  if (/^\d+x\d+$/.test(size)) return `${base}/assets/v1/images/w${size.split('x')[0]}/${code}.${format}`;
+  return `${base}/assets/v1/images/${size}/${code}.${format}`;
 }
 
 export function fmtBytes(n: number): string {
@@ -62,8 +63,12 @@ export function fmtBytes(n: number): string {
   return `${(n / 1024 / 1024).toFixed(2)} MB`;
 }
 
+export function apiBase(): string {
+  return process.env.NEXT_PUBLIC_API_URL ?? '';
+}
+
 export async function fetchJSON<T>(url: string): Promise<T> {
-  const r = await fetch(url);
+  const r = await fetch(`${apiBase()}${url}`);
   if (!r.ok) throw new Error(`${r.status} ${url}`);
   return r.json() as Promise<T>;
 }
