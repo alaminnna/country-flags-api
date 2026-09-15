@@ -19,20 +19,28 @@
   <a href="https://country-flags-api.vercel.app/playground">Playground</a>
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Go-00ADD8?style=flat&logo=go&logoColor=white" alt="Go" />
+  <img src="https://img.shields.io/badge/Next.js-000000?style=flat&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/github/license/alaminnna/country-flags-api" alt="License" />
+  <img src="https://img.shields.io/badge/254-countries-green" alt="Countries" />
+  <img src="https://img.shields.io/badge/26%2C162-variants-blue" alt="Variants" />
+</p>
+
 ---
 
 ## What this is
 
 A free API that serves country flags and metadata. No database. No Node.js in production. No runtime image processing. Just one Go binary doing what it's good at — reading files off disk and sending them to you fast.
 
-254 countries. 26,162 flag variants (SVG, WebP, PNG, JPG, PDF, AI, EPS). Every file already exists on disk. The server is just a really efficient middleman.
+**254 countries. 26,162 flag variants** (SVG, WebP, PNG, JPG, PDF, AI, EPS). Every file already exists on disk. The server is just a really efficient middleman.
 
 ## Quickstart
 
 ```bash
 # Clone and run
-git clone https://github.com/fivexl/flags-api.git
-cd flag
+git clone https://github.com/alaminnna/country-flags-api.git
+cd country-flags-api
 go run ./cmd/flagsapi -assets ./assets
 ```
 
