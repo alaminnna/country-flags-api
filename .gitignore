@@ -10,3 +10,5 @@ err.txt
 .api.pid
 diac_test.go
 device-shot (2).png
+
+web/tsconfig.tsbuildinfo
