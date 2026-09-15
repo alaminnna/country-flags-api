@@ -2,9 +2,6 @@
   "buildCommand": "npm install && npm run build",
   "outputDirectory": "out",
   "framework": "nextjs",
-  "env": {
-    "NEXT_PUBLIC_API_URL": "@api-url"
-  },
   "headers": [
     {
       "source": "/_next/static/(.*)",
