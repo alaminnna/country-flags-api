@@ -1,19 +1,6 @@
 {
-  "buildCommand": "npm install && npm run build",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
   "outputDirectory": "out",
-  "framework": "nextjs",
-  "headers": [
-    {
-      "source": "/_next/static/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/assets/(.*)",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    }
-  ]
+  "ignoreCommand": "git ls-files --others --exclude-standard -- web/ | head -1"
 }
